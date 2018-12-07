@@ -28,6 +28,7 @@
                     <li><a href="estacionamientos.jsp"><span class="glyphicon glyphicon-eye-open"></span> VER ESTACIONAMIENTOS</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Bienvenido${user}</a></li>
                     <li><a href="PrcesoSession"><span class="glyphicon glyphicon-chevron-left"></span> SALIR</a></li>
                 </ul>
             </div>
