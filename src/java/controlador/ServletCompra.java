@@ -5,12 +5,19 @@
  */
 package controlador;
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.tagext.TryCatchFinally;
+import modelo.dao.DaoBoleta;
+import modelo.dao.DaoUsuario;
+import modelo.dto.Boleta;
+import modelo.dto.Estacionamiento;
+import modelo.dto.Usuario;
 
 /**
  *
@@ -29,19 +36,14 @@ public class ServletCompra extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletCompra</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletCompra at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        //Recibimos el boton del formulario
+        String opcion = request.getParameter("btnAccion");
+        //Cual accion se ejecuta
+        if (opcion.equals("AgregarDestino")) {
+            agregarDestino(request, response);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -82,5 +84,16 @@ public class ServletCompra extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void agregarDestino(HttpServletRequest request, HttpServletResponse response) {
+        int destinoId = Integer.parseInt(request.getParameter("cboDestino"));
+        int cantidad = Integer.parseInt(request.getParameter("txtCantidad"));
+        
+        Estacionamiento estacionamiento = new Estacionamiento(destinoId);
+        Boleta bo = new Boleta(estacionamiento, cantidad);
+        
+        DaoBoleta daobo = new DaoBoleta();
+        daobo.agregar(bo);
+    }
 
 }
