@@ -19,7 +19,7 @@
     </head>
     <body  style="background-size: cover; background-image: url(img/fondoreal.jpg)" > 
         <c:choose>
-            <c:when test="${user== null} && ${pass== null}">
+            <c:when test="${user== null}">
                 <div class="background"></div>
                 <div class="content">
                     <h1>Debes iniciar Sesión primero</h1>
