@@ -30,7 +30,7 @@
                         </br>
                         </br>
                         <h3 style="color: #ffffff">Iniciar Sesion</h3>
-                        <form action="procesoLogin" method="GET" >
+                        <form action="ProcesoLogin" method="GET" >
                             <div class="form-group">
                                 <input type="text" name="txtUser" value="" placeholder="Usuario" class="form-control" minlength="4" required="" maxlength="25"/>
                             </div>
