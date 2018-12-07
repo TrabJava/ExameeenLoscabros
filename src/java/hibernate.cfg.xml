@@ -53,5 +53,4 @@ Contributor(s):
     <mapping resource="modelo/dto/Tipousuario.hbm.xml"/>
     <mapping resource="modelo/dto/Boleta.hbm.xml"/>
   </session-factory>
-  <session-factory/>
 </hibernate-configuration>
