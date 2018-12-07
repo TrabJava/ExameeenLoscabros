@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.dao.DaoLogin;
+import modelo.dto.Usuario;
 
 /**
  *
@@ -29,19 +31,30 @@ public class ServletLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletLogin</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletLogin at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        try {
+            String user = request.getParameter("txtUser");
+            String pass = request.getParameter("txtPass");
+
+            Usuario usuario = new Usuario(user, pass);
+
+            DaoLogin dao = new DaoLogin();
+            Usuario aux = dao.buscar(usuario.getNombre(), usuario.getPass());
+
+            if (aux.getTipousuario().getDescripcionTipo().equals("cliente")) {
+
+                request.getSession().setAttribute("user", usuario.getNombre());
+                request.getSession().setAttribute("tipousuario", usuario.getTipousuario().getIdTipo());
+
+            } else {
+                request.getSession().setAttribute("mensaje", "Error");
+                response.sendRedirect("login.jsp");
+            }
+
+        } catch (Exception e) {
+            response.sendRedirect("login.jsp");
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
