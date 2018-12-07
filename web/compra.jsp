@@ -46,7 +46,7 @@
                                         <option value="2">Estacionamiento Bluepark Espacio M</option>
                                         <option value="3">Estacionamientos Serrano</option>
                                         <option value="4">Estacionamientos DUOC UC</option>
-                                        <option value="4">Estacionamiento Nativo</option>
+                                        <option value="5">Estacionamiento Nativo</option>
                                     </select>
                                     <label>                            </label><input type="submit" name="btnAgregarDestino" value="agregar" class="btn btn-brown"/>
                                 </td>
