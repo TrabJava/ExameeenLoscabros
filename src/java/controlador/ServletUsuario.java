@@ -11,6 +11,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.dao.DaoUsuario;
+import modelo.dto.Tipousuario;
+import modelo.dto.Usuario;
 
 /**
  *
@@ -29,22 +32,43 @@ public class ServletUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletUsuario</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletUsuario at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            //Recibimos los datos del formulario
+            String user = request.getParameter("txtNombreUsuario");
+            String pass = request.getParameter("txtContrasenia");
+            int rut = Integer.parseInt(request.getParameter("txtRut"));
+            String nombre = request.getParameter("txtNombre");
+            String apellido = request.getParameter("txtApellido");
+            String correo = request.getParameter("txtCorreo");
+            int telefono = Integer.parseInt(request.getParameter("txtTelefono"));
+
+            int tipoUsuario = 1;
+
+            Tipousuario tipo = new Tipousuario(tipoUsuario);
+
+            //Validamos a nivel de modelo (DTO)
+            Usuario usuario = new Usuario(tipo, user, pass, rut, nombre, apellido, telefono, correo);
+
+            //Llamamos al dao que tiene los metodos
+            DaoUsuario dao = new DaoUsuario();
+
+            if (dao.agregar(usuario)) {
+                //variable de sesion (nombre de la variable,contenido)
+                request.getSession().setAttribute("msjOK", "Usuario agregado");
+            } else {
+                //variable de sesion (nombre de la variable,contendio)
+                request.getSession().setAttribute("msjNO", "Usuario no agregado");
+            }
+
+        } catch (Exception e) {
+            request.getSession().setAttribute("msjNO", "Error: ");
+
+        } finally {
+            response.sendRedirect("registrarse.jsp");
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
