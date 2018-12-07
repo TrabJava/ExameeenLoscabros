@@ -24,6 +24,13 @@ public class Boleta  implements java.io.Serializable {
        this.cantidad = cantidad;
        this.montoBoleta = montoBoleta;
     }
+
+    public Boleta(Estacionamiento estacionamiento, Integer cantidad) {
+        this.estacionamiento = estacionamiento;
+        this.cantidad = cantidad;
+    }
+    
+    
    
     public Integer getIdBoleta() {
         return this.idBoleta;
