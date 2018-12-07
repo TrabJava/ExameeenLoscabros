@@ -32,7 +32,7 @@ public class ServletSession extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        session.removeAttribute("usuario");
+        session.removeAttribute("user");
         session.removeAttribute("tipousuario");
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
