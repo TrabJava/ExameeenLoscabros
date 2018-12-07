@@ -18,6 +18,15 @@
 
     </head>
     <body  style="background-size: cover; background-image: url(img/fondoreal.jpg)" > 
+
+        <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                           url = "jdbc:mysql://localhost:3306/autopark?zeroDateTimeBehavior=convertToNull"
+                           user = "root"  password = ""/>
+        <sql:query dataSource = "${snapshot}" var = "admin">
+            SELECT * FROM usuario WHERE usuario.tipo_usu=1  ;
+        </sql:query>
+
+
         <c:choose>
             <c:when test="${user== null}">
                 <div class="background"></div>
@@ -79,15 +88,17 @@
                                     <td>Id Boleta</td>
                                 </tr>
 
-                                <c:forEach var="boleta" items="${boletas}">
-                                    <tr>
-                                        <td>${boleta.getEstacionamiento().getDescripcion()}<td/>
-                                        <td>${boleta.getCantidad()}</td>
-                                        <td>${boleta.getMontoBoleta()}</td>
-                                        <td>${boleta.getIdBoleta()}</td>
-                                        <td> <button class="btn btn-brown" type="submit" name="btnEliminar" value="${boleta.getIdBoleta()}">Eliminar</Button></td>
-
-                                    <tr/>
+                                <c:forEach var="row" items="${boletas}">
+                                    <form action="procesoCompra" method="GET">
+                                        <tr>
+                                            
+                                            <td>${boleta.getEstacionamiento().getDescripcion()}<td/>
+                                            <td>${boleta.getCantidad()}</td>
+                                            <td>${boleta.getMontoBoleta()}</td>
+                                            <td><input name="txtId" type="text" readonly="" value="${row.IdBoleta}"></td>
+                                            <td> <button class="btn btn-brown" type="submit" name="btnEliminar" value="${boleta.getIdBoleta()}">Eliminar</Button></td>
+                                        <tr/>
+                                    </form>
                                 </c:forEach>
                             </table>
 
