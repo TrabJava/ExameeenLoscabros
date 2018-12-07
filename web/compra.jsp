@@ -58,7 +58,6 @@
                                                 <option value="4">Estacionamientos DUOC UC</option>
                                                 <option value="5">Estacionamiento Nativo</option>
                                             </select>
-                                            <label>                            </label><input type="submit" name="btnAccion" value="AgregarDestino" class="btn btn-brown"/>
                                         </td>
                                     <br>
 
@@ -78,31 +77,7 @@
                                         %>
                                     </td>
                                 </tr>
-                            </table>
-
-                            <table class="table table-hover">
-                                <tr>
-                                    <td>Nombre destino</td>
-                                    <td></td>
-                                    <td>Cantidad</td>
-                                    <td>Precio Boleta</td>
-                                    <td>Id Boleta</td>
-                                </tr>
-
-                                <c:forEach var="row" items="${boletas}">
-                                    <form action="procesoCompra" method="GET">
-                                        <tr>
-                                            
-                                            <td>${boleta.getEstacionamiento().getDescripcion()}<td/>
-                                            <td>${boleta.getCantidad()}</td>
-                                            <td>${boleta.getMontoBoleta()}</td>
-                                            <td><input name="txtId" type="text" readonly="" value="${row.IdBoleta}"></td>
-                                            <td> <button class="btn btn-brown" type="submit" name="btnEliminar" value="${boleta.getIdBoleta()}">Eliminar</Button></td>
-                                        <tr/>
-                                    </form>
-                                </c:forEach>
-                            </table>
-
+                            </table>       
                             <table  class="table-bordered-5 alert-warning breadcrumb caption ">
                                 <tr>
                                     <td>
@@ -126,6 +101,27 @@
                             </table>
                             <input type="submit" name="btnAccion" value="Pagar" class="btn btn-brown"/>
                         </form>
+                            
+                            <form action="ProcesoEstacionamiento" method="GET" >
+                                <c:if test="${sessionScope.estacionamientos != null}">
+                                    <table class="table table-bordered table-striped" style="background: #ffffff" >
+                                        <tr>         
+                                            <th>Num Ticket:</th>
+                                            <th>Estacionamiento:</th>
+                                            <th>Monto:</th>
+                                        </tr>
+                                        <c:forEach var="listarTodo" items="${estacionamientos}">
+                                            <tr>
+                                                <td> ${listarTodo.idEstacionamiento}</td>
+                                                <td> ${listarTodo.descripcion}</td>
+                                                <td> ${listarTodo.valor}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </table>
+                                </c:if>
+                                <div class="form-group text-center">
+                                </div>
+                            </form>
                     </div>
                 </div>
                 ${mensaje}
