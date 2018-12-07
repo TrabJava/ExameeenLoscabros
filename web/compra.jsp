@@ -11,54 +11,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pagar Estacionamiento</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     </head>
     <body  style="background-size: cover; background-image: url(img/fondoreal.jpg)" > 
         <jsp:include page="menu.jsp"></jsp:include>
             <div class="container-fluid" style="max-width: 650px"> 
                 <div class="jumbotron" style="margin-top: 5px">
-<div align="center">
+                    <div align="center">
                         <img src="img\compraempresa.png" style="width: 500px; height: 150px;"/>
-                         </div>
+                    </div>
                     <form action="" method="post">
                         <input type="hidden" name="compraId" value="${compra.getIdCompra()}">
-
-                    <table class="table-bordered-5 alert-warning breadcrumb caption "  >
-                        <tr>
-                            <td>
-                                <label for="">RUT Empresa: </label>
-                            </td>
-                            <td>
-                                <input type="number" name="txtRut" value="${cliente.getRut()}" required="true" maxlength="15" >
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="">Nombre Empresa: </label>
-                            </td>
-                            <td>
-                                <input type="text" name="txtNombres" value="${cliente.getNombres()}" required="true" maxlength="50">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="">Direccion: </label>
-                            </td>
-                            <td>
-                                <input type="text" name="txtDireccion" value="${cliente.getDireccion()}" required="true" maxlength="50">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="">Comprado Por: </label>
-                            </td>
-                            <td>
-                                <input type="text" name="txtCompradoPor" value="${cliente.getComprador()}" required="true" maxlength="50">
-                            </td>
-                        </tr>
-                    </table>
+                    
                     <h4> <p style="display: inline;font-style: italic;font-size: 20px;font-family: initial">Seleccione Estacionamiento, Indique la cantidad de dinero que mostró aplicación movil:</p></h4>
                     <table class="table-bordered-1 alert-warning breadcrumb c">
                         <center>
