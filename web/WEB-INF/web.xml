@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>ServletUsuario</servlet-name>
+        <servlet-class>controlador.ServletUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletLogin</servlet-name>
+        <servlet-class>controlador.ServletLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletCompra</servlet-name>
+        <servlet-class>controlador.ServletCompra</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletBoleta</servlet-name>
+        <servlet-class>controlador.ServletBoleta</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletUsuario</servlet-name>
+        <url-pattern>/ProcesoUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletLogin</servlet-name>
+        <url-pattern>/ProcesoLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCompra</servlet-name>
+        <url-pattern>/ProcesoCompra</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletBoleta</servlet-name>
+        <url-pattern>/ProcesoBoleta</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
