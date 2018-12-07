@@ -39,13 +39,13 @@ public class ServletLogin extends HttpServlet {
             Usuario usuario = new Usuario(user, pass);
 
             DaoLogin dao = new DaoLogin();
-            Usuario aux = dao.buscar(usuario.getNombre(), usuario.getPass());
+            Usuario aux = dao.buscar(usuario.getUser(), usuario.getPass());
 
             if (aux.getTipousuario().getDescripcionTipo().equals("cliente")) {
 
                 request.getSession().setAttribute("user", usuario.getNombre());
-                request.getSession().setAttribute("tipousuario", usuario.getTipousuario().getIdTipo());
-
+                request.getSession().setAttribute("tipousuario", usuario.getTipousuario().getDescripcionTipo());
+                response.sendRedirect("inicio.jsp");
             } else {
                 request.getSession().setAttribute("mensaje", "Error");
                 response.sendRedirect("login.jsp");
