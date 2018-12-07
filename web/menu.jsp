@@ -3,7 +3,9 @@
     Created on : 03-12-2018, 20:10:23
     Author     : gaymer
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +17,15 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-
+<c:choose>
+            <c:when test="${user== null} && ${pass== null}">
+                <div class="background"></div>
+                <div class="content">
+                    <h1>Debes iniciar Sesión primero</h1>
+                    <h3><a href="login.jsp">(Iniciar Sesión)</a></h3>
+                </div>
+            </c:when>
+        </c:choose>
         <nav class="navbar navbar-inverse" style="background-color: #333333!important; font-family: monospace" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">

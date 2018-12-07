@@ -3,7 +3,9 @@
     Created on : 04-12-2018, 22:57:06
     Author     : gamer
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +14,15 @@
         <title>Voucher</title>
     </head>
     <body>
+        <c:choose>
+            <c:when test="${user== null} && ${pass== null}">
+                <div class="background"></div>
+                <div class="content">
+                    <h1>Debes iniciar Sesión primero</h1>
+                    <h3><a href="login.jsp">(Iniciar Sesión)</a></h3>
+                </div>
+            </c:when>
+        </c:choose>
         <jsp:include page="menu.jsp"/>
         <div class="container-fluid" style="max-width: 600px">
             <div class="jumbotron" style="margin-top: 30px" >
