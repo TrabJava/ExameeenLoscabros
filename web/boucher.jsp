@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Voucher</title>
     </head>
-    <body>
+    <body style="background-size: cover; background-image: url(img/fondoreal.jpg)" >
         <c:choose>
             <c:when test="${user== null}">
                 <div class="background"></div>
