@@ -23,8 +23,8 @@
                     <h3><a href="login.jsp">(Iniciar Sesión)</a></h3>
                 </div>
             </c:when>
-        </c:choose>
-        <jsp:include page="menu.jsp"/>
+                <c:when test="${user!=null}">
+                    <jsp:include page="menu.jsp"/>
         <div class="container">
  <div align="center">
                         <img src="img\bienvenuto.png" style="width: 400px; height: 250px;"/>
@@ -59,5 +59,10 @@
     </a>
   </div>
 </div>
-    </body>
+    
+                </c:when>
+                <c:otherwise>
+            </c:otherwise>
+        </c:choose>
+        </body>
 </html>

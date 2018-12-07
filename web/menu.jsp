@@ -25,8 +25,8 @@
                     <h3><a href="login.jsp">(Iniciar Sesión)</a></h3>
                 </div>
             </c:when>
-        </c:choose>
-        <nav class="navbar navbar-inverse" style="background-color: #333333!important; font-family: monospace" role="navigation">
+                <c:when test="${user!=null}">
+                    <nav class="navbar navbar-inverse" style="background-color: #333333!important; font-family: monospace" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <img src="img/logoautopark.png" style="width: 81px; float:none; margin:  auto; margin-top: 5%;" alt=""/>
@@ -44,5 +44,10 @@
             </div>
 
         </nav>
+                </c:when>
+                 <c:otherwise>
+            </c:otherwise>
+        </c:choose>
+       
     </body>
 </html>

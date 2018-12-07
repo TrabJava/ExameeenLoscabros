@@ -22,8 +22,8 @@
                     <h3><a href="login.jsp">(Iniciar Sesión)</a></h3>
                 </div>
             </c:when>
-        </c:choose>
-        <jsp:include page="menu.jsp"/>
+                <c:when test="${user!=null}">
+                  <jsp:include page="menu.jsp"/>
         <div class="container-fluid" style="max-width: 600px">
             <div class="jumbotron" style="margin-top: 30px" >
                 <h1>Detalles de la compra</h1>
@@ -53,6 +53,10 @@
                 <h5 class="glyphicon glyphicon-plane" style="color: #985f0d"> Medio De Envio ${compra.getMedioRetiroString()}</h5>
                 <h3> Total A Pagar: ${MontoTotal} </h3>
             </div>
-        </div>
+        </div>  
+                </c:when>
+                 <c:otherwise>
+            </c:otherwise>
+        </c:choose>
     </body>
 </html>

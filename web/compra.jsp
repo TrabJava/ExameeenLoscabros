@@ -26,8 +26,8 @@
                     <h3><a href="login.jsp">(Iniciar Sesión)</a></h3>
                 </div>
             </c:when>
-        </c:choose>
-        <jsp:include page="menu.jsp"></jsp:include>
+                <c:when test="${user!=null}">
+                    <jsp:include page="menu.jsp"></jsp:include>
             <div class="container-fluid" style="max-width: 650px"> 
                 <div class="jumbotron" style="margin-top: 5px">
                     <div align="center">
@@ -123,5 +123,11 @@
             </div>
         </div>
         ${mensaje}
+                    
+                </c:when>
+                 <c:otherwise>
+            </c:otherwise>
+        </c:choose>
+        
     </body>
 </html>

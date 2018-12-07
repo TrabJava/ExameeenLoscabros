@@ -26,8 +26,8 @@
                     <h3><a href="login.jsp">(Iniciar Sesión)</a></h3>
                 </div>
             </c:when>
-        </c:choose>
-        <jsp:include page="menu.jsp"></jsp:include>
+                <c:when test="${user!=null}">
+                 <jsp:include page="menu.jsp"></jsp:include>
         <center>
             <div class="container">
   
@@ -87,6 +87,12 @@
                 </form>
             </div>
         </div>
-    </center>
+    </center>   
+                  
+                </c:when>
+         <c:otherwise>
+            </c:otherwise>
+        </c:choose>
+        
 </body>
 </html>
