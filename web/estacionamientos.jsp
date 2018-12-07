@@ -14,17 +14,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <style>
-            .body {
-                background: url(img/estacionamiento.jpg); 
-                background-repeat: no-repeat; 
-                background-size: 100% 100%;
-                background-attachment: fixed; 
-            }﻿
-        </style>
 
     </head>
-    <body class="body">
+    <body  style="background-size: cover; background-image: url(img/fondoreal.jpg)" > 
         <jsp:include page="menu.jsp"></jsp:include>
 <div align="center">
                         <img src="img/parking.png" style="width: 500px; height: 150px;"/>
