@@ -16,6 +16,10 @@
         <servlet-name>ServletBoleta</servlet-name>
         <servlet-class>controlador.ServletBoleta</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletSession</servlet-name>
+        <servlet-class>controlador.ServletSession</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletUsuario</servlet-name>
         <url-pattern>/ProcesoUsuario</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ServletBoleta</servlet-name>
         <url-pattern>/ProcesoBoleta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletSession</servlet-name>
+        <url-pattern>/PrcesoSession</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
