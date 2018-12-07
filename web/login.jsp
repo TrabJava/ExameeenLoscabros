@@ -41,11 +41,12 @@
                                 <a href="registrarse.jsp">Registrarse</a>
                             </div>
                             <div class="form-group text-center"> 
-                                <input type="submit" name="btnEnviar" value="Ingresar" class="btn btn-primary" />
+                                <input type="submit" name="btnAccion" value="Ingresar" class="btn btn-primary" />
                                 <input type="reset" name="btnLimpiar" value="Limpiar" class="btn btn-danger" />
                             </div>
                         </form>
-                        ${Error}
+                        ${msjOK}
+                        ${msjNO}
                     </div>
                 </div>
             </div>
