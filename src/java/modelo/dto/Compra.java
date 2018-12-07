@@ -22,6 +22,13 @@ public class Compra  implements java.io.Serializable {
     public Compra() {
     }
 
+    public Compra(Integer medioPago, Integer medioEnvio) {
+        this.medioPago = medioPago;
+        this.medioEnvio = medioEnvio;
+    }
+
+    
+    
     public Compra(Usuario usuario, Integer montoTotal, Boolean pagado, Integer medioPago, Integer medioEnvio, Set<Boleta> boletas) {
        this.usuario = usuario;
        this.montoTotal = montoTotal;

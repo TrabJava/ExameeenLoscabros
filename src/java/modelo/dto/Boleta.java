@@ -18,6 +18,12 @@ public class Boleta  implements java.io.Serializable {
     public Boleta() {
     }
 
+    public Boleta(Estacionamiento estacionamiento) {
+        this.estacionamiento = estacionamiento;
+    }
+    
+    
+
     public Boleta(Compra compra, Estacionamiento estacionamiento, Integer cantidad, Integer montoBoleta) {
        this.compra = compra;
        this.estacionamiento = estacionamiento;

@@ -33,7 +33,7 @@
                             <div align="center">
                                 <img src="img\compraempresa.png" style="width: 500px; height: 150px;"/>
                             </div>
-                            <form action="" method="post">
+                            <form action="ProcesoCompra" method="post">
                                 <input type="hidden" name="compraId" value="${compra.getIdCompra()}">
 
                             <h4> <p style="display: inline;font-style: italic;font-size: 20px;font-family: initial">Seleccione Estacionamiento, Indique la cantidad de dinero que mostró aplicación movil:</p></h4>
@@ -48,7 +48,7 @@
                                                 <option value="4">Estacionamientos DUOC UC</option>
                                                 <option value="5">Estacionamiento Nativo</option>
                                             </select>
-                                            <label>                            </label><input type="submit" name="btnAgregarDestino" value="agregar" class="btn btn-brown"/>
+                                            <label>                            </label><input type="submit" name="btnAccion" value="AgregarDestino" class="btn btn-brown"/>
                                         </td>
                                     <br>
 
@@ -112,7 +112,7 @@
                                 </tr>
                                 <h3> <p style="display: inline;font-style: italic;font-size: 20px;font-family: initial">Total A Pagar: ${MontoTotal}</p> </h3>
                             </table>
-                            <input type="submit" name="btnPagar" value="Pagar" class="btn btn-brown"/>
+                            <input type="submit" name="btnAccion" value="Pagar" class="btn btn-brown"/>
                         </form>
                     </div>
                 </div>

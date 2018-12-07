@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.tagext.TryCatchFinally;
 import modelo.dao.DaoBoleta;
+import modelo.dao.DaoCompra;
 import modelo.dao.DaoUsuario;
 import modelo.dto.Boleta;
+import modelo.dto.Compra;
 import modelo.dto.Estacionamiento;
 import modelo.dto.Usuario;
 
@@ -85,19 +87,25 @@ public class ServletCompra extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void agregarDestino(HttpServletRequest request, HttpServletResponse response) {
+    private void agregarDestino(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         int destinoId = Integer.parseInt(request.getParameter("cboDestino"));
         int tipoPago = Integer.parseInt(request.getParameter("cboPago"));
         int tipoEnvio = Integer.parseInt(request.getParameter("cboEnvio"));
 
-        int cantidad = Integer.parseInt(request.getParameter("txtCantidad"));
+
 
         Estacionamiento estacionamiento = new Estacionamiento(destinoId);
-        Boleta bo = new Boleta(estacionamiento, cantidad);
-
+        Compra com = new Compra(tipoPago, tipoEnvio);
+        Boleta bo = new Boleta(estacionamiento);
+        
+        
+        DaoCompra daoCo = new DaoCompra();
+        daoCo.agregar(com);
         DaoBoleta daobo = new DaoBoleta();
         daobo.agregar(bo);
+        
+        response.sendRedirect("compra.jsp");
     }
 
 }
