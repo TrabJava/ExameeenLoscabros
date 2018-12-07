@@ -27,7 +27,7 @@
                     <br>
                     <br>
                     <br>
-                    <form action="FALTA_PROCESO" method="POST">
+                    <form action="ProcesoUsuario" method="POST">
                         <div class="text-center">
                             <div class="form-group">
                                 <label style="color: black">Nombre de usuario: </label>
