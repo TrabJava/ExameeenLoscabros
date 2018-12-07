@@ -44,7 +44,7 @@ public class ServletLogin extends HttpServlet {
             if (aux.getTipousuario().getDescripcionTipo().equals("cliente")) {
 
                 request.getSession().setAttribute("user", usuario.getNombre());
-                request.getSession().setAttribute("tipousuario", usuario.getTipousuario().getDescripcionTipo());
+                request.getSession().setAttribute("tipousuario", aux.getTipousuario().getIdTipo());
                 response.sendRedirect("inicio.jsp");
             } else {
                 request.getSession().setAttribute("mensaje", "Error");
