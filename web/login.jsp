@@ -32,10 +32,10 @@
                         <h3 style="color: #ffffff">Iniciar Sesion</h3>
                         <form action="procesoLogin" method="GET" >
                             <div class="form-group">
-                                <input type="text" name="txtUser" value="" placeholder="Usuario" class="form-control" minlength="4" required=""/>
+                                <input type="text" name="txtUser" value="" placeholder="Usuario" class="form-control" minlength="4" required="" maxlength="25"/>
                             </div>
                             <div class="form-group">
-                                <input type="password" name="txtPass" value="" placeholder="Contraseña" required="true" class="form-control"/>
+                                <input type="password" name="txtPass" value="" placeholder="Contraseña" required="true" class="form-control" maxlength="25"/>
                             </div>
                             <div class="form-group">
                                 <a href="registrarse.jsp">Registrarse</a>

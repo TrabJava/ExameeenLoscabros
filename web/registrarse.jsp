@@ -31,23 +31,23 @@
                         <div class="text-center">
                             <div class="form-group">
                                 <label style="color: black">Nombre de usuario: </label>
-                                <input type="text" name="txtNombreUsuario" value="" placeholder="Ej: ElnumeroUno" required="true" class="form-control" />
+                                <input type="text" name="txtNombreUsuario" value="" placeholder="Ej: ElnumeroUno" required="true" maxlength="25" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label style="color: white">Nombre: </label>
-                                <input type="text" name="txtNombre" value="" placeholder="Ej: Dominique" required="true" class="form-control" />
+                                <input type="text" name="txtNombre" value="" placeholder="Ej: Dominique" required="true" maxlength="50" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label style="color: black">Apellido: </label>
-                                <input type="text" name="txtApellido" value="" placeholder="Ej: Toretto" required="true" class="form-control" />
+                                <input type="text" name="txtApellido" value="" placeholder="Ej: Toretto" required="true" maxlength="50" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label style="color: white">Correo: </label>
-                                <input type="text" name="txtCorreo" value="" placeholder="Ej: mestacionosolo@rapidoyfurioso.com" required="true" class="form-control" />
+                                <input type="text" name="txtCorreo" value="" placeholder="Ej: mestacionosolo@rapidoyfurioso.com" maxlength="50" required="true" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label style="color: black">Telefono: </label>
-                                <input type="number" name="txtTelefono" value="" placeholder="Ej: 956231211" required="true"  class="form-control" />
+                                <input type="number" name="txtTelefono" value="" placeholder="Ej: 956231211" required="true" maxlength="11"  class="form-control" />
                             </div>
                             <div class="form-group text-center"> 
                                 <input type="submit" name="btnAccion" value="Registrarse" class="btn btn-primary" />

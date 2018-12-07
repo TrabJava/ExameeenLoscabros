@@ -31,7 +31,7 @@
                                 <label for="">RUT Empresa: </label>
                             </td>
                             <td>
-                                <input type="number" name="txtRut" value="${cliente.getRut()}" required="true" >
+                                <input type="number" name="txtRut" value="${cliente.getRut()}" required="true" maxlength="15" >
                             </td>
                         </tr>
                         <tr>
@@ -39,7 +39,7 @@
                                 <label for="">Nombre Empresa: </label>
                             </td>
                             <td>
-                                <input type="text" name="txtNombres" value="${cliente.getNombres()}" required="true">
+                                <input type="text" name="txtNombres" value="${cliente.getNombres()}" required="true" maxlength="50">
                             </td>
                         </tr>
                         <tr>
@@ -47,7 +47,7 @@
                                 <label for="">Direccion: </label>
                             </td>
                             <td>
-                                <input type="text" name="txtDireccion" value="${cliente.getDireccion()}" required="true">
+                                <input type="text" name="txtDireccion" value="${cliente.getDireccion()}" required="true" maxlength="50">
                             </td>
                         </tr>
                         <tr>
@@ -55,7 +55,7 @@
                                 <label for="">Comprado Por: </label>
                             </td>
                             <td>
-                                <input type="text" name="txtCompradoPor" value="${cliente.getComprador()}" required="true">
+                                <input type="text" name="txtCompradoPor" value="${cliente.getComprador()}" required="true" maxlength="50">
                             </td>
                         </tr>
                     </table>

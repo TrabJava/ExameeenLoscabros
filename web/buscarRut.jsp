@@ -31,7 +31,7 @@
                         <table  class="table-bordered-5 alert-warning breadcrumb caption">
                             <tbody>
                                 <tr>
-                                    <td><label>Rut:     </label></td><td><input  type="text" name="txtRut" value="" required="true"/></td>
+                                    <td><label>Rut:     </label></td><td><input  type="text" name="txtRut" value="" required="true" maxlength="15"/></td>
                                     <td><label>         </label></td>
                                 </tr>
                             <br>
