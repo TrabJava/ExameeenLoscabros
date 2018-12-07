@@ -42,7 +42,7 @@ public class ServletCompra extends HttpServlet {
         //Recibimos el boton del formulario
         String opcion = request.getParameter("btnAccion");
         //Cual accion se ejecuta
-        if (opcion.equals("AgregarDestino")) {
+        if (opcion.equals("Pagar")) {
             agregarDestino(request, response);
         }
 
