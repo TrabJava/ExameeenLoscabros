@@ -86,12 +86,16 @@ public class ServletCompra extends HttpServlet {
     }// </editor-fold>
 
     private void agregarDestino(HttpServletRequest request, HttpServletResponse response) {
+
         int destinoId = Integer.parseInt(request.getParameter("cboDestino"));
+        int tipoPago = Integer.parseInt(request.getParameter("cboPago"));
+        int tipoEnvio = Integer.parseInt(request.getParameter("cboEnvio"));
+
         int cantidad = Integer.parseInt(request.getParameter("txtCantidad"));
-        
+
         Estacionamiento estacionamiento = new Estacionamiento(destinoId);
         Boleta bo = new Boleta(estacionamiento, cantidad);
-        
+
         DaoBoleta daobo = new DaoBoleta();
         daobo.agregar(bo);
     }

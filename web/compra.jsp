@@ -79,13 +79,13 @@
                                     <td>Id Boleta</td>
                                 </tr>
 
-                                <c:forEach var="ticket" items="${tickets}">
+                                <c:forEach var="boleta" items="${boletas}">
                                     <tr>
-                                        <td>${ticket.getDestino().getNombreDestino()}<td/>
-                                        <td>${ticket.getCantidad()}</td>
-                                        <td>${ticket.getMontoTicket()}</td>
-                                        <td>${ticket.getIdTicket()}</td>
-                                        <td> <button class="btn btn-brown" type="submit" name="btnEliminar" value="${ticket.getIdTicket()}">Eliminar</Button></td>
+                                        <td>${boleta.getEstacionamiento().getDescripcion()}<td/>
+                                        <td>${boleta.getCantidad()}</td>
+                                        <td>${boleta.getMontoBoleta()}</td>
+                                        <td>${boleta.getIdBoleta()}</td>
+                                        <td> <button class="btn btn-brown" type="submit" name="btnEliminar" value="${boleta.getIdBoleta()}">Eliminar</Button></td>
 
                                     <tr/>
                                 </c:forEach>
@@ -117,7 +117,6 @@
                     </div>
                 </div>
                 ${mensaje}
-
             </c:when>
             <c:otherwise>
             </c:otherwise>
