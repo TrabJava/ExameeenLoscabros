@@ -45,6 +45,9 @@ public class ServletCompra extends HttpServlet {
         if (opcion.equals("Pagar")) {
             agregarDestino(request, response);
         }
+        if (opcion.equals("Listar")) {
+            Listar(request, response);
+        }
 
     }
 
@@ -105,6 +108,12 @@ public class ServletCompra extends HttpServlet {
         DaoBoleta daobo = new DaoBoleta();
         daobo.agregar(bo);
         
+        response.sendRedirect("boucher.jsp");
+    }
+
+    private void Listar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        DaoCompra dao = new DaoCompra();
+        request.getSession().setAttribute("estacionamientos", dao.listarTodo());
         response.sendRedirect("boucher.jsp");
     }
 

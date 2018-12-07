@@ -26,6 +26,7 @@
                 <jsp:include page="menu.jsp"/>
                 <div class="container-fluid" style="max-width: 600px">
                     <div class="jumbotron" style="margin-top: 30px" >
+                        <form action="ProcesoCompra">
                         <h1>Detalles de la compra</h1>
                         <h3> Numero de boucher ${compra.getIdCompra()} </h3>
                         <br/>
@@ -37,21 +38,22 @@
                                 <td style="color: #985f0d">Cantidad</td>
                                 <td style="color: #985f0d">Nro Boleta</td>
                             </tr>
-                            <c:forEach var="boleta" items="${boletas}">
+                            <c:forEach var="listarTodo" items="${boletas}">
                                 <tr>
-                                    <td >${boleta.getEstacionamiento().getDescripcion()}<td/>
-                                    <td >${boleta.getCantidad()}</td>
-                                    <td >${boleta.getIdBoleta()}</td>
+                                    <td >${listarTodo.estacionamiento.descripcion()}<td/>
+                                    <td >${listarTodo.cantidad()}</td>
+                                    <td >${listarTodo.idBoleta()}</td>
                                 </tr>
                             </c:forEach>
                         </table> 
                         <h5 class="glyphicon glyphicon-shopping-cart" style="color: #985f0d">
-                            Medio De Pago: ${com.getMedioPago()}
+                            Medio De Pago: ${listarTodo.medioPago()}
                         </h5>
                         <br/>
                         <br/>
-                        <h5 class="glyphicon glyphicon-plane" style="color: #985f0d"> Medio De Envio ${com.getMedioEnvio()}</h5>
+                        <h5 class="glyphicon glyphicon-plane" style="color: #985f0d"> Medio De Envio ${listarTodo.medioEnvio()}</h5>
                         <h3> Total A Pagar: ${MontoTotal} </h3>
+                        </form>
                     </div>
                 </div>  
             </c:when>
