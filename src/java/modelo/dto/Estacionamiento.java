@@ -19,6 +19,10 @@ public class Estacionamiento  implements java.io.Serializable {
     public Estacionamiento() {
     }
 
+    public Estacionamiento(Integer idEstacionamiento) {
+        this.idEstacionamiento = idEstacionamiento;
+    }
+
     public Estacionamiento(String descripcion, Integer valor, Set<Boleta> boletas) {
        this.descripcion = descripcion;
        this.valor = valor;
