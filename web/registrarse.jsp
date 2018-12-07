@@ -34,6 +34,14 @@
                                 <input type="text" name="txtNombreUsuario" value="" placeholder="Ej: ElnumeroUno" required="true" maxlength="25" class="form-control" />
                             </div>
                             <div class="form-group">
+                                <label style="color: black">Contraseña: </label>
+                                <input type="text" name="txtContrasenia" value="" placeholder="Ej: ElnumeroUno" required="true" maxlength="25" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label style="color: black">Rut: </label>
+                                <input type="text" name="txtRut" value="" placeholder="Ej: ElnumeroUno" required="true" maxlength="25" class="form-control" />
+                            </div>
+                            <div class="form-group">
                                 <label style="color: white">Nombre: </label>
                                 <input type="text" name="txtNombre" value="" placeholder="Ej: Dominique" required="true" maxlength="50" class="form-control" />
                             </div>
