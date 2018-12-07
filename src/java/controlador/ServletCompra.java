@@ -105,7 +105,7 @@ public class ServletCompra extends HttpServlet {
         DaoBoleta daobo = new DaoBoleta();
         daobo.agregar(bo);
         
-        response.sendRedirect("compra.jsp");
+        response.sendRedirect("boucher.jsp");
     }
 
 }
